@@ -1,0 +1,21 @@
+- description: Discover accounts allowing unconstrained delegation
+  id: 666c9469-fa3d-4d4c-ab56-2c2ee26ef51a
+  name: Account Discovery (Unconstrained Delegation)
+  platforms:
+    windows:
+      psh:
+        cleanup: Remove-Item -LiteralPath "C:\Users\Public\Microsoft.ActiveDirectory.Management"
+          -Force -Recurse
+        command: Expand-Archive Microsoft.ActiveDirectory.Management.zip -Force -DestinationPath
+          C:\Users\Public\Microsoft.ActiveDirectory.Management;Set-ExecutionPolicy
+          -Scope Process -ExecutionPolicy Bypass -Force; Import-Module "C:\Users\Public\Microsoft.ActiveDirectory.Management\ActiveDirectory.psd1";
+          Get-ADUser -Filter {(TrustedForDelegation -eq "True")} -Properties TrustedForDelegation
+          | Select-Object -ExpandProperty SamAccountName;
+        payloads:
+          - Microsoft.ActiveDirectory.Management.zip
+        parsers:
+          plugins.stockpile.app.parsers.basic:
+            - source: host.user.username
+  tactic: discovery
+  technique:
+    attack_id: T1087.003

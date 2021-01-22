@@ -1,0 +1,20 @@
+- description: Use rundll32 to execute a dll
+  id: af1a51d8-5068-4e46-9035-af27296a8181
+  name: Rundll32 execution
+  platforms:
+    windows:
+      psh:
+        cleanup: 'Remove-Item "C:\Users\Public\SEC699.dll";
+
+          Remove-Item "C:\Users\Public\SEC699.txt";'
+        command: Copy-Item -Path SEC699.dll -Destination "C:\Users\Public\";$Fso =
+          New-Object -ComObject Scripting.FileSystemObject;$Payload = $Fso.getfile("C:\Users\Public\SEC699.dll");$Arguments
+          = "$($Payload.ShortPath),entry";Start-Process -FilePath rundll32.exe -WorkingDirectory
+          "C:\Users\Public\" -ArgumentList @($Arguments);Sleep 5;Get-Content -Path
+          "C:\Users\Public\SEC699.txt";
+        payloads:
+        - SEC699.dll
+  tactic: execution
+  technique:
+    attack_id: T1085
+    name: Rundll32

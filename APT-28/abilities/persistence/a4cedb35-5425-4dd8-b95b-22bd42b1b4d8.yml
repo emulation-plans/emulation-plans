@@ -1,0 +1,16 @@
+- description: Create a scheduled task
+  id: a4cedb35-5425-4dd8-b95b-22bd42b1b4d8
+  name: Scheduled task persistence
+  platforms:
+    windows:
+      psh:
+        cleanup: Unregister-ScheduledTask -TaskName "Otterside" -Confirm:$false;
+        command: $action = New-ScheduledTaskAction -Execute 'explorer.exe' -Argument
+          '"https://www.youtube.com/embed/PxvBhH6Lpn8?controls=0&playlist=PxvBhH6Lpn8&autoplay=1&loop=1"';$trigger
+          = New-ScheduledTaskTrigger -AtLogOn -User $env:USERNAME;$task = Register-ScheduledTask
+          -Action $action -Trigger $trigger -TaskName "Otterside" -Description "Anotter
+          Other";$task | Start-ScheduledTask;
+  tactic: persistence
+  technique:
+    attack_id: T1053
+    name: Scheduled Task

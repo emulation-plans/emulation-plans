@@ -1,0 +1,13 @@
+- description: List groups and output the results to a text file.
+  id: 129a7db5-8bc3-498c-8cdc-1aeff166a2df
+  name: Enumerate AD groups (Custom)
+  platforms:
+    windows:
+      psh:
+        command: AdFind.exe -f "(objectcategory=group)" > ad_group.txt
+        payloads:
+          - AdFind.exe
+  tactic: discovery
+  technique:
+    attack_id: T1069.002
+    name: 'Permission Groups Discovery: Domain Groups'
