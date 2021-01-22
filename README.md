@@ -15,6 +15,7 @@ APT/Group Name, then a Caldera specific named directory.
 - Abilties contains our abilities split into subdirectories full of tactics, the individual technique is then defined in the YML file.
 - Adversaries contain a list of abilities, a friendly name and a brief description. 
 - Payloads contain any exe's, dll's or other magic artifacts that we may need to run this adversary as an operation.   
+> A note on payloads, they may very well contain malware/bad things. So use at your own risk! The maintainers accept no liability for any damage cause through use of this software 
 
 ```
 ├── APT-28
