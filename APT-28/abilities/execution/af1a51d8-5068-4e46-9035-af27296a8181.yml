@@ -4,16 +4,16 @@
   platforms:
     windows:
       psh:
-        cleanup: 'Remove-Item "C:\Users\Public\SEC699.dll";
+        cleanup: 'Remove-Item "C:\Users\Public\APT28.dll";
 
-          Remove-Item "C:\Users\Public\SEC699.txt";'
-        command: Copy-Item -Path SEC699.dll -Destination "C:\Users\Public\";$Fso =
-          New-Object -ComObject Scripting.FileSystemObject;$Payload = $Fso.getfile("C:\Users\Public\SEC699.dll");$Arguments
+          Remove-Item "C:\Users\Public\APT28.txt";'
+        command: Copy-Item -Path APT28.dll -Destination "C:\Users\Public\";$Fso =
+          New-Object -ComObject Scripting.FileSystemObject;$Payload = $Fso.getfile("C:\Users\Public\APT28.dll");$Arguments
           = "$($Payload.ShortPath),entry";Start-Process -FilePath rundll32.exe -WorkingDirectory
           "C:\Users\Public\" -ArgumentList @($Arguments);Sleep 5;Get-Content -Path
-          "C:\Users\Public\SEC699.txt";
+          "C:\Users\Public\APT28.txt";
         payloads:
-        - SEC699.dll
+        - APT28.dll
   tactic: execution
   technique:
     attack_id: T1085

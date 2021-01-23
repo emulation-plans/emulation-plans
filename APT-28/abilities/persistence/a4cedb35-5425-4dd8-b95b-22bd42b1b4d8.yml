@@ -6,7 +6,7 @@
       psh:
         cleanup: Unregister-ScheduledTask -TaskName "Otterside" -Confirm:$false;
         command: $action = New-ScheduledTaskAction -Execute 'explorer.exe' -Argument
-          '"https://www.youtube.com/embed/PxvBhH6Lpn8?controls=0&playlist=PxvBhH6Lpn8&autoplay=1&loop=1"';$trigger
+          '"https://www.youtube.com/watch?v=DLzxrzFCyOs"';$trigger
           = New-ScheduledTaskTrigger -AtLogOn -User $env:USERNAME;$task = Register-ScheduledTask
           -Action $action -Trigger $trigger -TaskName "Otterside" -Description "Anotter
           Other";$task | Start-ScheduledTask;

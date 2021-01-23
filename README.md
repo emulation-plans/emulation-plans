@@ -7,11 +7,14 @@ I wanted to put something together for the community to be able to use, to aid i
 
 The idea being that the community (for now, me) can build out Emulation Plans and save them in a consistent repository for sharing at a later date. 
 
+A core principal taught on the wonderful SANS SEC699 Course 
+
 ## WTF is going on here?
 The directory structure should make sense; 
 
 APT/Group Name, then a Caldera specific named directory. 
 
+- Each APT/Group should contain a `README.md` that defines any environment specific pre-requisites etc.
 - Abilties contains our abilities split into subdirectories full of tactics, the individual technique is then defined in the YML file.
 - Adversaries contain a list of abilities, a friendly name and a brief description. 
 - Payloads contain any exe's, dll's or other magic artifacts that we may need to run this adversary as an operation.   
@@ -19,24 +22,25 @@ APT/Group Name, then a Caldera specific named directory.
 
 ```
 ├── APT-28
+│   ├── README.md
 │   ├── abilities
 │   │   ├── credential-access
-│   │   │   └── 643fc9ef-1418-4b98-8467-b62c8f2e3b93.yml
+│   │   │   ├── 643fc9ef-1418-4b98-8467-b62c8f2e3b93.yml
+│   │   │   └── d4df3433-4828-4cba-a213-0f2f2ce2e162.yml
 │   │   ├── discovery
-│   │   │   ├── 129a7db5-8bc3-498c-8cdc-1aeff166a2df.yml
-│   │   │   └── 666c9469-fa3d-4d4c-ab56-2c2ee26ef51a.yml
+│   │   │   └── 85341c8c-4ecb-4579-8f53-43e3e91d7617.yml
 │   │   ├── execution
-│   │   │   ├── af1a51d8-5068-4e46-9035-af27296a8181.yml
-│   │   │   ├── d4df3433-4828-4cba-a213-0f2f2ce2e162.yml
+│   │   │   └── af1a51d8-5068-4e46-9035-af27296a8181.yml
+│   │   ├── lateral-movement
 │   │   │   └── e42084fc-0a87-4089-90d9-7fb321e17f3b.yml
 │   │   └── persistence
 │   │       └── a4cedb35-5425-4dd8-b95b-22bd42b1b4d8.yml
 │   ├── adversaries
 │   │   └── f5ccb24b-1314-485a-8bfc-234bf7b21760.yml
 │   └── payloads
+│       ├── APT28.dll
 │       ├── AdFind.exe
 │       ├── Rubeus.exe
-│       ├── SEC699.dll
 │       └── passwordlist.txt
 ```
 
