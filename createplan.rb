@@ -9,8 +9,9 @@ OptionParser.new do |parser|
   parser.banner = "Usage: createplan.rb [options]"
   parser.on("-h", "--help", "Show this help message") do ||
     puts parser
+    exit
   end
-  parser.on("-n", "--name NAME", "The name of the APT to create a skeleton for. .") do |v|
+  parser.on("-n", "--name NAME", "The name of the APT to create a skeleton for.") do |v|
     options[:name] = v
   end
 end.parse!

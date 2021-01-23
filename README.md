@@ -7,7 +7,9 @@ I wanted to put something together for the community to be able to use, to aid i
 
 The idea being that the community (for now, me) can build out Emulation Plans and save them in a consistent repository for sharing at a later date. 
 
-A core principal taught on the wonderful SANS SEC699 Course 
+A core principal taught on the wonderful SANS SEC699 Course is that _Purple Teaming_ can be used as a great way to help bring Red and Blue teams together. Don't see this as a way to 'get one over' on your colleagues/peers. See this as a way to collaborate as a team. 
+
+Test your SIEM, Test your EDR, don't test your colleagues. 
 
 ## WTF is going on here?
 The directory structure should make sense; 
@@ -44,7 +46,7 @@ APT/Group Name, then a Caldera specific named directory.
 │       └── passwordlist.txt
 ```
 
-There is a small script `deployer.rb` - this script takes a few values from the user and will then deploy the abilties and adversary file into the Caldera Stockpile plugin's data directory. 
+There is a small script `deployer.rb` - this script takes a few values from the user and will then deploy the abilties and adversary file into the Caldera Stockpile plugin's data directory.
 
 ```
 Usage: deployer.rb [options]
@@ -53,7 +55,15 @@ Usage: deployer.rb [options]
     -p, --path PATH                  The path to your $CALDERA/data directory.
 
 ```
- 
+
+A second script `createplan.rb` does as the name implies, it allows users to create a skeleton that matches the layout in the markdown above. `$NAME -> ['abilities', 'adversaries', 'payloads'] etc`
+
+```
+Usage: createplan.rb [options]
+    -h, --help                       Show this help message
+    -n, --name NAME                  The name of the APT to create a skeleton for.
+
+``` 
 ## Props to
 Shout out to everyone trying to make InfoSec easier. 
 - Mitre for [ATT&CK](https://attack.mitre.org/) and [Caldera](https://github.com/mitre/caldera) obviously. 
