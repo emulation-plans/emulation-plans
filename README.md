@@ -41,7 +41,6 @@ APT/Group Name, then a Caldera specific named directory.
 │   │   └── f5ccb24b-1314-485a-8bfc-234bf7b21760.yml
 │   └── payloads
 │       ├── APT28.dll
-│       ├── AdFind.exe
 │       ├── Rubeus.exe
 │       └── passwordlist.txt
 ```
