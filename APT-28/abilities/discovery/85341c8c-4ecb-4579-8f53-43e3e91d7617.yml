@@ -17,6 +17,9 @@
     windows:
       psh:
         command: arp -a
+        parsers:
+          plugins.stockpile.app.parsers.ipaddr:
+            - source: remote.host.ip
   tactic: discovery
   technique:
     attack_id: T1018
