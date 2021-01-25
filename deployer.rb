@@ -68,8 +68,8 @@ def sourcesmover(plan, path)
   puts pwd
   Dir.glob("#{pwd}/#{plan}/sources/*").each do|f|
     puts f
-    FileUtils.mkdir_p("#{path}/plugins/stockpile/sources/")
-    FileUtils.cp(f, "#{path}/plugins/stockpile/sources/")
+    FileUtils.mkdir_p("#{path}/plugins/stockpile/data/sources/")
+    FileUtils.cp(f, "#{path}/plugins/stockpile/data/sources/")
   end
 end
 
