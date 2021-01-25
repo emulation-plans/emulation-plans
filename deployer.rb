@@ -63,6 +63,16 @@ def payloadmover(plan, path)
   end
 end
 
+def sourcesmover(plan, path)
+  pwd = Dir.pwd
+  puts pwd
+  Dir.glob("#{pwd}/#{plan}/payloads/*").each do|f|
+    puts f
+    FileUtils.mkdir_p("#{path}/plugins/stockpile/sources/")
+    FileUtils.cp(f, "#{path}/plugins/stockpile/sources/")
+  end
+end
+
 def planner(options)
   plan = options[:name]
   path = options[:path]
