@@ -79,6 +79,7 @@ def planner(options)
   abilitymover(plan, path)
   adversarymover(plan, path)
   payloadmover(plan, path)
+  sourcesmover(plan, path)
 end
 
 puts options
