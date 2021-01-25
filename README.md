@@ -52,7 +52,6 @@ Usage: deployer.rb [options]
     -h, --help                       Show this help message
     -n, --name NAME                  The name of the APT to install.
     -p, --path PATH                  The path to your $CALDERA/data directory.
-
 ```
 
 A second script `createplan.rb` does as the name implies, it allows users to create a skeleton that matches the layout in the markdown above. `$NAME -> ['abilities', 'adversaries', 'payloads'] etc`
@@ -61,7 +60,6 @@ A second script `createplan.rb` does as the name implies, it allows users to cre
 Usage: createplan.rb [options]
     -h, --help                       Show this help message
     -n, --name NAME                  The name of the APT to create a skeleton for.
-
 ``` 
 ## Props to
 Shout out to everyone trying to make InfoSec easier. 
