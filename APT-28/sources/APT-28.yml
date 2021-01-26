@@ -1,8 +1,8 @@
 ---
 id: apt-28
-name: apt-28-facts
+name: apt-28-predefined
 facts:
   - trait: remote.sql.user.name
     value: sql_svc
   - trait: sql.server.ip
-    value: 192.168.20.107
+    value: 192.168.20.104
