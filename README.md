@@ -35,8 +35,6 @@ APT/Group Name, then a Caldera specific named directory.
 │   │   │   └── 85341c8c-4ecb-4579-8f53-43e3e91d7617.yml
 │   │   ├── execution
 │   │   │   └── af1a51d8-5068-4e46-9035-af27296a8181.yml
-│   │   ├── initial-access
-│   │   │   └── f1ba9455-5a1b-4bbd-9ad4-97cc98b065c2.yml
 │   │   ├── lateral-movement
 │   │   │   └── e42084fc-0a87-4089-90d9-7fb321e17f3b.yml
 │   │   ├── persistence
@@ -45,9 +43,7 @@ APT/Group Name, then a Caldera specific named directory.
 │   │   └── f5ccb24b-1314-485a-8bfc-234bf7b21760.yml
 │   ├── payloads
 │   │   ├── APT28.dll
-│   │   ├── Normal.dotm
 │   │   ├── Rubeus.exe
-│   │   ├── myfakec2agent.exe
 │   │   └── passwordlist.txt
 │   └── sources
 │       └── APT-28.yml
