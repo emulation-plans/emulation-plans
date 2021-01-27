@@ -11,6 +11,19 @@ The idea being that the community can build out Emulation Plans and save them in
  
 Test your SIEM, Test your EDR, don't use this as a way to shame/embarrass your colleagues, you're all on the same team.  
 
+## Quickstart 
+> Please read the instructions in this file in full first. Some of the concepts here deviate from other Caldera Plugins. 
+
+If you want to download the Emulation Plans repo, install the plugin and, the APT-28 plan run this: 
+```bash
+git clone https://github.com/emulation-plans/emulation-plans.git
+cd emulation-plans
+ruby deployer.rb -n "APT-28" -p "/Users/npalmer/caldera"
+```
+
+You will need to login to Caldera and `Enable` the Emulation Plans plugin and then restart before you can use the Adversary/Abilities. 
+
+Further details on the `deployer.rb` and `createplan.rb` scripts are at the bottom of this doc. 
 ## WTF is going on here?
 The directory structure should make sense; 
 
