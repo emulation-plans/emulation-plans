@@ -5,11 +5,11 @@ A repository of Mitre Caldera compatible emulation-plans
 
 I wanted to put something together for the community to be able to use, to aid in the sometimes odious task of Adversary Emulation. 
 
-The idea being that the community (for now, me) can build out Emulation Plans and save them in a consistent repository for sharing at a later date. 
-
-A core principal taught on the wonderful SANS SEC699 Course is that _Purple Teaming_ can be used as a great way to help bring Red and Blue teams together. Don't see this as a way to 'get one over' on your colleagues/peers. See this as a way to collaborate as a team. 
-
-Test your SIEM, Test your EDR, don't test your colleagues. 
+The idea being that the community can build out Emulation Plans and save them in a consistent repository for sharing at a later date. Part of this is ensuring plans are generated in a consistent pattern. To address this; 
+- I have created two scripts, one to ensure a reliable and repeatable pattern for developing plans. 
+- The second, to deploy plans in a custom `Emulation Plans` Caldera plugin.  
+ 
+Test your SIEM, Test your EDR, don't use this as a way to shame/embarrass your colleagues, you're all on the same team.  
 
 ## WTF is going on here?
 The directory structure should make sense; 
@@ -76,5 +76,7 @@ Usage: createplan.rb [options]
 ## Props to
 Shout out to everyone trying to make InfoSec easier. 
 - Mitre for [ATT&CK](https://attack.mitre.org/) and [Caldera](https://github.com/mitre/caldera) obviously. 
+- Thanks to Mitre again as for creating the [Center for Threat-Informed Defense](https://github.com/center-for-threat-informed-defense/) which has started building out some very nice emulation plans these can be reviewed [here](https://github.com/center-for-threat-informed-defense/adversary_emulation_library) they are also Apache 2.0 licensed!
+    - When I get a chance I will attempt to get FIN6 and APT29 from their repository working in here. 
 
  

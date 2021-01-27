@@ -20,12 +20,12 @@ def createmodule(plan)
   pwd = Dir.pwd
   ability = ["credential-access", "discovery", "execution", "persistence", "exfiltration", "reconnaissance", "resource-development", "initial-access", "privilege-escalation", "defense-evasion", "lateral-movement", "collection", "command-and-control", "exfiltration", "impact"]
   for ability in ability
-    FileUtils.mkdir_p("#{pwd}/#{plan}/abilities/#{ability}")
-    FileUtils.mkdir_p("#{pwd}/#{plan}/adversaries")
-    FileUtils.mkdir_p("#{pwd}/#{plan}/payloads")
-    FileUtils.mkdir_p("#{pwd}/#{plan}/sources")
-    FileUtils.touch("#{pwd}/#{plan}/sources/#{plan}.yml")
-    FileUtils.touch("#{pwd}/#{plan}/README.md")
+    FileUtils.mkdir_p("#{pwd}/plans/#{plan}/abilities/#{ability}")
+    FileUtils.mkdir_p("#{pwd}/plans/#{plan}/adversaries")
+    FileUtils.mkdir_p("#{pwd}/plans/#{plan}/payloads")
+    FileUtils.mkdir_p("#{pwd}/plans/#{plan}/sources")
+    FileUtils.touch("#{pwd}/plans/#{plan}/sources/#{plan}.yml")
+    FileUtils.touch("#{pwd}/plans/#{plan}/README.md")
 
   end
 end
