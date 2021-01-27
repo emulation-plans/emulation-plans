@@ -22,6 +22,7 @@ ruby deployer.rb -n "APT-28" -p "/Users/npalmer/caldera"
 ```
 
 You will need to login to Caldera and `Enable` the Emulation Plans plugin and then restart before you can use the Adversary/Abilities. 
+> You could add the plugin directly into the caldera config file ($CALDERA_DIR/conf/default.yml) and Caldera won't need the aditional restart. 
 
 Further details on the `deployer.rb` and `createplan.rb` scripts are at the bottom of this doc. 
 ## WTF is going on here?
