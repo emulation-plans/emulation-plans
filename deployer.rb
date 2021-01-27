@@ -28,6 +28,11 @@ OptionParser.new do |parser|
   end
 end.parse!
 
+def plugindeployer(path)
+  pwd = Dir.pwd
+  FileUtils.mkdir_p("#{path}/plugins/emulation-plans/")
+  FileUtils.cp("#{pwd}/emulation-plans/hook.py", "#{path}/plugins/emulation-plans/")
+end
 
 def abilitymover(plan, path)
   pwd = Dir.pwd
@@ -37,8 +42,8 @@ def abilitymover(plan, path)
     puts ability
     Dir.glob("#{pwd}/#{plan}/*/#{ability}/*.yml").each do|f|
       puts f
-      FileUtils.mkdir_p("#{path}/plugins/stockpile/data/abilities/#{ability}")
-      FileUtils.cp(f, "#{path}/plugins/stockpile/data/abilities/#{ability}/")
+      FileUtils.mkdir_p("#{path}/plugins/emulation-plans/data/abilities/#{ability}")
+      FileUtils.cp(f, "#{path}/plugins/emulation-plans/data/abilities/#{ability}/")
     end
   end
 end
@@ -48,8 +53,8 @@ def adversarymover(plan, path)
   puts pwd
     Dir.glob("#{pwd}/#{plan}/adversaries/*.yml").each do|f|
     puts f
-    FileUtils.mkdir_p("#{path}/plugins/stockpile/data/adversaries/")
-    FileUtils.cp(f, "#{path}/plugins/stockpile/data/adversaries/")
+    FileUtils.mkdir_p("#{path}/plugins/emulation-plans/data/adversaries/")
+    FileUtils.cp(f, "#{path}/plugins/emulation-plans/data/adversaries/")
   end
 end
 
@@ -58,8 +63,8 @@ def payloadmover(plan, path)
   puts pwd
   Dir.glob("#{pwd}/#{plan}/payloads/*").each do|f|
     puts f
-    FileUtils.mkdir_p("#{path}/plugins/stockpile/payloads/")
-    FileUtils.cp(f, "#{path}/plugins/stockpile/payloads/")
+    FileUtils.mkdir_p("#{path}/plugins/emulation-plans/payloads/")
+    FileUtils.cp(f, "#{path}/plugins/emulation-plans/payloads/")
   end
 end
 
@@ -68,14 +73,15 @@ def sourcesmover(plan, path)
   puts pwd
   Dir.glob("#{pwd}/#{plan}/sources/*").each do|f|
     puts f
-    FileUtils.mkdir_p("#{path}/plugins/stockpile/data/sources/")
-    FileUtils.cp(f, "#{path}/plugins/stockpile/data/sources/")
+    puts FileUtils.mkdir_p("#{path}/plugins/emulation-plans/data/sources/")
+    puts FileUtils.cp(f, "#{path}/plugins/emulation-plans/data/sources/")
   end
 end
 
 def planner(options)
   plan = options[:name]
   path = options[:path]
+  plugindeployer(path)
   abilitymover(plan, path)
   adversarymover(plan, path)
   payloadmover(plan, path)

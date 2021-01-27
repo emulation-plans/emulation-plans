@@ -16,6 +16,7 @@ The directory structure should make sense;
 
 APT/Group Name, then a Caldera specific named directory. 
 
+- Plans contain a list of APT/Group Names
 - Each APT/Group should contain a `README.md` that defines any environment specific pre-requisites etc.
 - Abilties contains our abilities split into subdirectories full of tactics, the individual technique is then defined in the YML file.
 - Adversaries contain a list of abilities, a friendly name and a brief description. 
@@ -23,38 +24,40 @@ APT/Group Name, then a Caldera specific named directory.
 > A note on payloads, they may very well contain malware/bad things. So use at your own risk! The maintainers accept no liability for any damage cause through use of this software 
 
 ```
-.
-├── APT-28
-│   ├── README.md
-│   ├── abilities
-│   │   ├── credential-access
-│   │   │   ├── 643fc9ef-1418-4b98-8467-b62c8f2e3b93.yml
-│   │   │   └── d4df3433-4828-4cba-a213-0f2f2ce2e162.yml
-│   │   ├── defense-evasion
-│   │   ├── discovery
-│   │   │   └── 85341c8c-4ecb-4579-8f53-43e3e91d7617.yml
-│   │   ├── execution
-│   │   │   └── af1a51d8-5068-4e46-9035-af27296a8181.yml
-│   │   ├── lateral-movement
-│   │   │   └── e42084fc-0a87-4089-90d9-7fb321e17f3b.yml
-│   │   ├── persistence
-│   │   │   └── a4cedb35-5425-4dd8-b95b-22bd42b1b4d8.yml
-│   ├── adversaries
-│   │   └── f5ccb24b-1314-485a-8bfc-234bf7b21760.yml
-│   ├── payloads
-│   │   ├── APT28.dll
-│   │   ├── Rubeus.exe
-│   │   └── passwordlist.txt
-│   └── sources
-│       └── APT-28.yml
-...
 ├── README.md
 ├── createplan.rb
-└── deployer.rb
-
+├── deployer.rb
+├── emulation-plans
+│   └── hook.py
+└── plans
+    ├── APT-28
+    │   ├── README.md
+    │   ├── abilities
+    │   │   ├── credential-access
+    │   │   │   ├── 643fc9ef-1418-4b98-8467-b62c8f2e3b93.yml
+    │   │   │   └── d4df3433-4828-4cba-a213-0f2f2ce2e162.yml
+    │   │   ├── discovery
+    │   │   │   └── 85341c8c-4ecb-4579-8f53-43e3e91d7617.yml
+    │   │   ├── execution
+    │   │   │   └── af1a51d8-5068-4e46-9035-af27296a8181.yml
+    │   │   ├── initial-access
+    │   │   │   └── f1ba9455-5a1b-4bbd-9ad4-97cc98b065c2.yml
+    │   │   ├── lateral-movement
+    │   │   │   └── e42084fc-0a87-4089-90d9-7fb321e17f3b.yml
+    │   │   ├── persistence
+    │   │   │   └── a4cedb35-5425-4dd8-b95b-22bd42b1b4d8.yml
+    │   ├── adversaries
+    │   │   └── f5ccb24b-1314-485a-8bfc-234bf7b21760.yml
+    │   ├── payloads
+    │   │   ├── APT28.dll
+    │   │   ├── Rubeus.exe
+    │   │   └── passwordlist.txt
+    │   └── sources
+    │       └── APT-28.yml
+...
 ```
 
-There is a small script `deployer.rb` - this script takes a few values from the user and will then deploy the abilties and adversary file into the Caldera Stockpile plugin's data directory.
+There is a small script `deployer.rb` - this script takes a few values from the user and will then deploy the Plugin, and then any corresponding abilties and adversary files into the plugin's data directory.
 
 ```
 Usage: deployer.rb [options]
