@@ -1,8 +1,0 @@
----
-id: fin-6
-name: fin-6-predefined
-facts:
-  - trait: output_file
-    value: "%temp%\\wce-output.txt"
-  - trait: node
-    value: 192.168.20.107
