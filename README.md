@@ -18,6 +18,7 @@ APT/Group Name, then a Caldera specific named directory.
 
 - Plans contain a list of APT/Group Names
 - Each APT/Group should contain a `README.md` that defines any environment specific pre-requisites etc.
+> Please read the `README.md` file in the Group specific directory. It is designed to make running the Emulation Plan in your environment as easy as possible. 
 - Abilties contains our abilities split into subdirectories full of tactics, the individual technique is then defined in the YML file.
 - Adversaries contain a list of abilities, a friendly name and a brief description. 
 - Payloads contain any exe's, dll's or other magic artifacts that we may need to run this adversary as an operation.   
