@@ -14,7 +14,7 @@ This Emulation plan has been tested in an environment that meets the following c
 #Emulation Plan overview
 
 The plan should run like this; 
-
+> In a future version there will be an initial-access task for this Plan.     
 - Step 1 is a simple `persistence` exercise - can we use Task Scheduler to persist an artifact on the machine. In our instance, our artifact is a Scheduled Task containing a link to Rick Astley's 'Never Gonna Give You Up'
     - We can validate that the task has worked by running `Get-ScheduledTask -TaskName "NeverGonna"` from a PowerShell prompt. 
 - Step 2 leverages `Rundll32` and a custom `APT28.dll` this DLL, when executed runs creates a text file and will output a small message and timestamp. 
