@@ -1,0 +1,11 @@
+- description: Using AD Management Tasks to get information on the domain
+  id: apt-34-001
+  name: 'Command and Scripting Interpreter: PowerShell'
+  platforms:
+    windows:
+      psh:
+        command: Expand-Archive Microsoft.ActiveDirectory.Management.zip -DestinationPath C:\Users\Public\Microsoft.ActiveDirectory.Management; Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass -Force; Import-Module "C:\Users\Public\Microsoft.ActiveDirectory.Management\ActiveDirectory.psd1"; Get-ADUser -Filter {(TrustedForDelegation -eq "True")} -Properties TrustedForDelegation; Get-ADComputer -Filter {(TrustedForDelegation -eq "True")} -Properties TrustedForDelegation; Get-ADUser -Filter {(msDS-AllowedToDelegateTo -ne "{}")} -Properties msDS-AllowedToDelegateTo; Get-ADComputer -Filter {(msDS-AllowedToDelegateTo -ne "{}")} -Properties msDS-AllowedToDelegateTo;
+  tactic: discovery
+  technique:
+    attack_id: T1059.001
+    name: 'Command and Scripting Interpreter: PowerShell'
