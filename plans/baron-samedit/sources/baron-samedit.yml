@@ -1,6 +1,6 @@
 ---
-id: apt-28
-name: apt-28-predefined
+id: baron-samedit-facts
+name: baron-samedit-predefined
 facts:
   - trait: target-id
     value: 0
