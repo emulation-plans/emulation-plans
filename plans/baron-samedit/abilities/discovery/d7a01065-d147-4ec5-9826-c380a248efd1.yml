@@ -1,12 +1,11 @@
----
-- id: d7a01065-d147-4ec5-9826-c380a248efd1
-  description: Run Check git is installed
-  name: Check if Git is installed
+- description: Check to see if Git is installed
+  id: d7a01065-d147-4ec5-9826-c380a248efd1
+  name: Check Git
   platforms:
     linux:
       sh:
-        command: "dpkg -l git"
+        command: which git
   tactic: discovery
   technique:
     attack_id: T1518
-    name: System Software Discovery
+    name: Software Discovery
