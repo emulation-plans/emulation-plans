@@ -1,10 +1,11 @@
-- description: Run Check git is installedrr
-  id: d7a01065-d147-4ec5-9826-c380a248efd1
+---
+- id: d7a01065-d147-4ec5-9826-c380a248efd1
+  description: Run Check git is installed
   name: Check if Git is installed
   platforms:
     linux:
       sh:
-        command: 'dpkg -l git'
+        command: "dpkg -l git"
   tactic: discovery
   technique:
     attack_id: T1518

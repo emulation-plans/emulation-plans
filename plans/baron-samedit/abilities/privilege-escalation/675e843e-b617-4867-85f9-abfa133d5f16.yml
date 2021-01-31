@@ -1,11 +1,12 @@
-- description: Grab Blasty's PoC
-  id: 675e843e-b617-4867-85f9-abfa133d5f16
+---
+- id: 675e843e-b617-4867-85f9-abfa133d5f16
+  description: Run Blasty's PoC
   name: Run exploit
   platforms:
     linux:
       sh:
-        cleanup: 'rm -rf /tmp/CVE-2021-3156'
-        command: '/tmp/CVE-2021-3156/sudo-hax-me-a-sandwich #{target-id}'
+        cleanup: "rm -rf /tmp/CVE-2021-3156"
+        command: "/tmp/CVE-2021-3156/sudo-hax-me-a-sandwich #{target-id}"
   tactic: execution
   technique:
     attack_id: T1068

