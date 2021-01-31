@@ -1,0 +1,11 @@
+---
+
+id: c34c4c83-f78e-43a2-8c90-6860d3367ddf
+name: baronsamedit
+description: Baron Samedit (Blasty PoC)
+atomic_ordering:
+  - d7a01065-d147-4ec5-9826-c380a248efd1
+  - 797e1120-1acf-4d7e-905b-9e903e5fd0c7
+  - 1fa76bee-a4a9-488c-937e-103f58b77459
+  - 675e843e-b617-4867-85f9-abfa133d5f16
+objective: 495a9828-cab1-44dd-a0ca-66e58177d8cc

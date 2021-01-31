@@ -40,7 +40,7 @@ def abilitymover(plan, path)
   ability = ["credential-access", "discovery", "execution", "persistence", "exfiltration", "reconnaissance", "resource-development", "initial-access", "privilege-escalation", "defense-evasion", "lateral-movement", "collection", "command-and-control", "exfiltration", "impact"]
   for ability in ability
     puts ability
-    Dir.glob("#{pwd}/plans/#{plan}/*/#{ability}/*.yml").each do|f|
+    Dir.glob("#{pwd}/plans/#{plan}/abilities/#{ability}/*.yml").each do|f|
       puts f
       FileUtils.mkdir_p("#{path}/plugins/emulation-plans/data/abilities/#{ability}")
       FileUtils.cp(f, "#{path}/plugins/emulation-plans/data/abilities/#{ability}/")
