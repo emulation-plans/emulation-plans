@@ -8,10 +8,10 @@ This Emulation plan has been tested in an environment that meets the following c
 
 - A domain controller.
 - A Windows 10 machine, joined to a domain. 
-- A Windows Server 2019 machine, with a service account called `sql_svc` with a password set to: `3g2W31Eo` The `passwordlist.txt` file contains this password. So if you wish to use a different password, make sure you add it to your `passwordlist.txt` file.
+- A Windows Server 2019 machine, with a service account called `sql_svc` with a password set to: `3g2W31Eo` The `passwordlist.txt` file contains this password. So if you wish to use a different password, make sure you add it to your `passwordlist.txt` file. This needs to utilise unconstrained delegation. 
 - A C2 Server - The _Run Rubeus to brute-force password from ticket_ ability (Credential Access - T1208) needs to pull the Rubeus and Passwordlist files from it. This can be any C2 Server (Covenant/Cobalt Strike etc) as long as you can present files for download of HTTP. Simply update the file `643fc9ef-1418-4b98-8467-b62c8f2e3b93.yml` with the IP and Port of the download URL.
-    - By default, the emulation plan will Download Rubeus from Caldera itself.  
-
+    - By default, the emulation plan will Download Rubeus from Caldera itself. 
+    
 #Emulation Plan overview
 
 The plan should run like this; 
@@ -19,7 +19,7 @@ The plan should run like this;
 - Step 1 is a simple `persistence` exercise - can we use Task Scheduler to persist an artifact on the machine. In our instance, our artifact is a Scheduled Task containing a link to Rick Astley's 'Never Gonna Give You Up'
     - We can validate that the task has worked by running `Get-ScheduledTask -TaskName "NeverGonna"` from a PowerShell prompt. 
 - Step 2 leverages `Rundll32` and a custom `APT28.dll` this DLL, when executed runs creates a text file and will output a small message and timestamp. 
-    - Validation step, confirm existance of the `C:/Users/Public/APT28.txt` file and confirm it's contents look simmilar to: `APT28: Payload executed on Tue Jan 26 10:28:41 2021`
+    - Validation step, confirm existance of the `C:/Users/Public/APT28.txt` file and confirm it's contents look similar to: `APT28: Payload executed on Tue Jan 26 10:28:41 2021`
 - Step 3 invokes Rubeus (which is provided in the `./payload` directory) and attempts to perform Kerberoasting on the local machine. 
 - Step 4 `arp` is run to then locate other machines to connect with
     - Your SIEM/EDR should show a log that `arp` has been run.
@@ -72,3 +72,4 @@ facts:
     value: 192.168.20.104
 ```
 
+#Notes

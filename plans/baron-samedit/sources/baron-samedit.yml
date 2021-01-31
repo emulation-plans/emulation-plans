@@ -1,0 +1,6 @@
+---
+id: apt-28
+name: apt-28-predefined
+facts:
+  - trait: target-id
+    value: 0

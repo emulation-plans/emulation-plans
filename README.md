@@ -93,5 +93,6 @@ Shout out to everyone trying to make InfoSec easier.
 - Mitre for [ATT&CK](https://attack.mitre.org/) and [Caldera](https://github.com/mitre/caldera) obviously. 
 - Thanks to Mitre again as for creating the [Center for Threat-Informed Defense](https://github.com/center-for-threat-informed-defense/) which has started building out some very nice emulation plans these can be reviewed [here](https://github.com/center-for-threat-informed-defense/adversary_emulation_library) they are also Apache 2.0 licensed!
     - When I get a chance I will attempt to get FIN6 and APT29 from their repository working in here. 
+- Ghostinthewires provided some very interesting Terraform modules that helped to build the labs. You should check out the one on building a domain controller [here](https://github.com/ghostinthewires/terraform-azurerm-ad-create)
 
  

@@ -1,0 +1,11 @@
+- description: Run Check git is installed
+  id: badbaron-001.yml
+  name: Check if Git is installed
+  platforms:
+    linux:
+      sh:
+        command: 'dpkg -l git'
+        tactic: discovery
+  technique:
+    attack_id: T1518
+    name: System Software Discovery

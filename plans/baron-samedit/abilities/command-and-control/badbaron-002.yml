@@ -1,0 +1,11 @@
+- description: Grab Blasty's PoC
+  id: badbaron-002.yml
+  name: Get Baron Samedit PoC Code
+  platforms:
+    linux:
+      sh:
+        command: 'git clone https://github.com/blasty/CVE-2021-3156.git /tmp/CVE-2021-3156'
+        tactic: command-and-control
+  technique:
+    attack_id: T1105
+    name: Ingress Tool Transfer
