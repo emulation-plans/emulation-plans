@@ -5,7 +5,6 @@
   platforms:
     linux:
       sh:
-        cleanup: rm /tmp/art.sh
         command: cd /tmp/CVE-2021-3156; make
   tactic: execution
   technique:

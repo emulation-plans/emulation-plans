@@ -8,10 +8,11 @@ To make this work you will need
 
 - A server running: 
   - Ubuntu 18.04.5 (Bionic Beaver) - sudo 1.8.21, libc-2.27
+    - You can downgrade sudo by running `sudo apt-get install sudo=1.8.21p2-3ubuntu1`
   - Ubuntu 20.04.1 (Focal Fossa) - sudo 1.8.31, libc-2.31
   - Debian 10.0 (Buster) - sudo 1.8.27, libc-2.28
 - Egress to the internet
-- Git installed
+- Git, make and gcc installed
 
 #Emulation Plan overview
 - Install Git
